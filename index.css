@@ -1,0 +1,10 @@
+body{display: grid;
+grid-template-areas: 
+    "header";
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-gap: 0vw;
+  height: 100vw;
+  max-width: 100vw;}
+ div{padding: 30%; border: 3px inset;}
+ #pageHeader{grid-area: header; background-color: gold;}
