@@ -1,0 +1,18 @@
+.row { margin: 0px ;  display: flex; flex-direction: row; align-items: flex-start; max-height: 874.5px;}
+  .el1{ border: 2px inset;  text-align: center; width: 28%; padding: 50px 25px 25px 0px;height: 132.1vh;}
+  .el2{ border: 2px inset;  text-align: center; width: 3%;  padding: 25px 25px 25px 0px; height: 136.3vh;}
+  .el3{ border: 2px inset;  text-align: right; width: 66%; padding: 25px 25px 25px 0px;height: 136.3vh;}
+
+.row2 { display: flex; flex-direction: row; align-items: flex-end; max-height: 600px}
+  .el_1{  margin:137% -25px -100% 0px;text-align: center; border: 3px inset; width: 30vw;   padding: 50px -25px -25px  0px; height: 42.5vh;}
+  .el_2{  margin:  0% -25px 0px   0px;text-align: center; border: 3px inset; width: 63.5vw; padding:  15%   0px  10px 10px; height: 40vh;}
+  .el_22{ margin:  0% -25px 0px   0px;text-align: left;   border: 3px inset; width: 63.5vw; padding:   0%   0px  10px 10px; height: 41.0vh;}
+
+.row3 { display: flex; flex-direction: row; align-items: flex-start; max-height: 600px}
+  .el_3{ margin:-20%   0% 0px  2%; border: 4px ridge; text-align: center; width: 17vw; padding: 20px 0px 0px 0px; height: 8vh;}
+  .el_4{ margin:-13% -10% 0px 72%; border: 4px ridge; text-align: center; width: 17vw; padding: 20px 0px 0px 0px; height: 8vh;}
+
+.lightgreen{background-color: lightgreen;}
+.moccasin{background-color: moccasin;}
+.deepskyblue{background-color: deepskyblue;}
+.white{background-color: white;}
