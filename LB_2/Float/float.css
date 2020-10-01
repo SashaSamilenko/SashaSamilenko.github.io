@@ -1,0 +1,13 @@
+#column1{float:left; max-width: 17vw; border: 3px inset; height: 100vh; padding: 30px 0px 0px 6vw;}
+#column1>#row1{max-width: 25vw; border: 1.5px inset; height: 34.5vh; margin: 140% 0% 0% -36%;}
+#column2{float:left; width: 3.40vw; height: 105vh; border: 2.1px inset;}
+#column3{float:right; max-width: 70vw; border: 1.5px inset; height: 105vh; text-align: right;}
+#column3>#rowX{text-align: center;width: 20vw; border: 1.5px inset; height: 6vh; margin: -14% 0vw 6.5% 2%; padding: 2% 0% 1% 0%;}
+#column3>#row2{max-width: 70vw; border: 1.5px inset; height: 38vh; margin: 0% 0% 0% -0.1%; }
+#column3>#row3{max-width: 70vw; border: 1.5px inset; height: 31.3vh; text-align: left; padding: 2.5% 0% 0.7% 1%; margin: 0% 0% 0% -0.1%;}
+#row3>#rowY{text-align: center;width: 20vw; border: 1.5px inset; height: 6vh; margin: -10.5% 0% 0% 69%; padding: 2% 0% 0% 0%;}
+
+.lightgreen{background-color: lightgreen;}
+.moccasin{background-color: moccasin;}
+.deepskyblue{background-color: deepskyblue;}
+.white{background-color: white;}
