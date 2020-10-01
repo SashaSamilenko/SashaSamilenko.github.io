@@ -1,0 +1,7 @@
+#firstLine{column-count: 3;}
+#firstLine > .FirstColumn{width: 30vw;border: 1px inset; max-height: 400px;}
+#firstLine > .SecondColumn{width: 5vw;border: 1px inset; max-height: 600px;}
+#firstLine > .ThirdColumn{width: 65vw;border: 1px inset; max-height: 200px;}
+#secondLine{column-count: 2;}
+#secondLine > .FirstC{width:30vw; border: 1px inset; max-height: 200px;}
+#secondLine > .SecondC{width: 65vw; border: 1px inset; max-width: 200px;}
