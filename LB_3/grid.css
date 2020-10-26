@@ -1,0 +1,46 @@
+body{ 
+  display: grid;
+  grid-template-areas: 
+    "header space aaa"
+    "header space bbb"
+    "footer space ccc";
+  grid-template-rows: 25% 40% 35%;
+  grid-template-columns: 25% 5% 70%;
+  grid-gap: 0vw;
+  height: 590px;
+  max-width: 100vw;
+  }
+  div{padding: 20px;border: 1px inset;}
+  #pageHeader{grid-area: header; background-color: moccasin; text-align: center;}
+  #pageFooter{grid-area: footer;background-color: lightgreen; text-align: center; font: 10pt/8pt sans-serif;}
+  #pageSpace{grid-area: space; background-color: white; text-align: left;}
+  #pageA{grid-area:aaa; background-color: deepskyblue; text-align: right; font: 10pt/8pt sans-serif;}
+  #pageB{grid-area:bbb; background-color: white; text-align: center;}
+  #pageC{grid-area:ccc; background-color: deepskyblue; text-align: left; font: 10pt/10pt sans-serif;}
+
+  #pageA > div{
+  	display: grid;
+  	grid-template-areas: 
+  	"ta";
+  	grid-template-rows: 1fr;
+  	grid-template-columns: 0.7fr;
+  	grid-gap: 0vw;
+  	max-width: 33%;
+  	border: 0px;
+  	margin: -12% 0px 0px 0%;
+  }
+  #pageC > div{
+  	display: grid;
+  	grid-template-areas: 
+  	"tc";
+  	grid-template-rows: 1fr;
+  	grid-template-columns: 120%;
+  	grid-gap: 0vw;
+  	max-width: 33vw;
+  	border: 0px;
+  	margin: -12% 2% 0% 70%;
+  }
+  #page1{grid-area: ta;text-align: center; border: 1px inset; background-color: white;}
+  #page3{grid-area: tc;text-align: center; border: 1px inset; background-color: white;}
+    /*#page2{grid-area: tb; background-color: white;text-align: center;}
+  #page3{grid-area: tc; text-align: center; border: 0px}*/
