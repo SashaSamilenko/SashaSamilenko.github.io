@@ -16,13 +16,11 @@ function CreateGameUsingCanvas()
 	document.getElementById('pageB').innerHTML+='<canvas id="myCanvas">Hello</canvas>';
 	const canvas=document.getElementById('myCanvas');
 	canvas.style.margin='0.5% 0% 0% -2.4%';
-	const width = canvas.width =(window.innerWidth-80)*0.7+21; //window.innerWidth;
-	//alert(window.innerWidth);
+	const width = canvas.width =(window.innerWidth-80)*0.7+21;
 	const height = canvas.height = Number(document.getElementById('pageSpace').style.height.slice(0,-2))*0.54-50;
 	const ctx = canvas.getContext('2d');
 	canvas.style.border='5px solid green';
 	document.getElementById('myCanvas').style.backgroundImage='url(texture.png)';
-	//document.getElementById('myCanvas').style.backgroundColor='black';
 	let image = new Image();
 	image.src = 'texture.png';
 	image.onload=function(){
@@ -40,8 +38,7 @@ let yellow_x,yellow_y,
 	red_x,red_y;
 function CreateCircles()
 {	
-	//const canvas=document.getElementById('myCanvas');
-	let ctx = myCanvas.getContext('2d');
+	let ctx = document.getElementById('myCanvas').getContext('2d');
 	ctx.fillStyle = 'yellow';
 	yellow_x=random(31,Number(myCanvas.width)-31);
 	yellow_y=random(31,Number(myCanvas.height)-31);
@@ -68,7 +65,7 @@ function CreateButtonPlay() {
 function CreateButtonClose() {
 	document.getElementById('pageB').innerHTML+="<input type='button' id='closeB' value='CLOSE'>";
 	pageB.style.textAlign='left';
-	document.getElementById('closeB').style.margin='-20% 0% 0% -2%';//85%';
+	document.getElementById('closeB').style.margin='-20% 0% 0% -2%';
 }
 function CreateButtonStart() {
 	document.getElementById('pageB').innerHTML+="<input type='button' id='startB' value='Start'>";
@@ -95,17 +92,14 @@ function DoubleToching()
 	if(l<=62)
 	{
 		clearInterval(timer);
-		// alert('Reload has appeared!');
 		mailBlock.innerHTML="Balls have met!";
 		localStorage.setItem(new Date(),"Balls have met!");
 		let first='<input type="button" id="startB" value="Start" style="margin: -20% 0% 0%;" disabled="">';
 		let second='<input type="button" id="reloadB" value="Reload" style="margin: -20% 0% 0%;">';
 		let text=String(document.getElementById('pageB').innerHTML);
-		// alert(document.getElementById('pageB').innerHTML);
 		document.getElementById('pageB').innerHTML=ExchangeTheText(text,first,second);
-		// alert(document.getElementById('pageB').innerHTML);
 		let reload=document.getElementById('reloadB');
-		const ctx = myCanvas.getContext('2d');
+		let ctx = document.getElementById('myCanvas').getContext('2d');
 		ctx.fillStyle='yellow';
 		ctx.beginPath();
 		ctx.arc(yellow_x,yellow_y, 31, degToRad(0), degToRad(360), false);
@@ -120,36 +114,13 @@ function DoubleToching()
 			localStorage.setItem(new Date(),"Click 'reload' button!");
 			document.getElementById('pageB').innerHTML=sessionStorage.getItem('savedText');
 			playB.onclick();
-			// let image = new Image();
-			// image.src = 'texture.png';
-			// image.onload=function(){
-			// 	for(let i=0;i<myCanvas.height/10;i++)
-			// 	{
-			// 		for(let j=0;j<myCanvas.width/10;j++)
-			// 		{
-			// 			ctx.drawImage(image, 32*j, 32*i);
-			// 		}
-			// 	}
-			// 	ctx.fillStyle = 'yellow';
-			// 	yellow_x=random(31,Number(myCanvas.width)-31);
-			// 	yellow_y=random(31,Number(myCanvas.height)-31);
-			// 	ctx.beginPath();
-			// 	ctx.arc(yellow_x,yellow_y, 31, degToRad(0), degToRad(360), false);
-			// 	ctx.fill();
-			// 	ctx.fillStyle = 'red';
-			// 	red_x=random(31,Number(myCanvas.width)-31);
-			// 	red_y=random(31,Number(myCanvas.height)-31);
-			// 	ctx.beginPath();
-			// 	ctx.arc(red_x,red_y, 31, degToRad(0), degToRad(360), false);
-			// 	ctx.fill();
-			// }
 		}
 	}
 }
 let timer;
 function MovingCircles()
 {
-	let ctx = myCanvas.getContext('2d');
+	let ctx = document.getElementById('myCanvas').getContext('2d');
 	clearInterval(timer);
 	flag=true;
 	flag2=true;
@@ -180,12 +151,12 @@ let check=false;
 let counterPixel=1;
 function RedToMove()
 {
-	let ctx = myCanvas.getContext('2d');
+	let ctx = document.getElementById('myCanvas').getContext('2d');
 	ctx.fillStyle = 'red';
 	if(k2==1 && check==false)
 	{
 		check=true;
-		if(red_x+counterPixel<Number(myCanvas.width)-31)//Number(document.getElementById('anim').style.width.slice(0,-2)))
+		if(red_x+counterPixel<Number(myCanvas.width)-31)
 		{
 			ctx.beginPath();
 			ctx.arc(red_x+counterPixel,red_y, 31, degToRad(0), degToRad(360), false);
@@ -210,7 +181,7 @@ function RedToMove()
 	if(k2==2 && check==false)
 	{
 		check=true;
-		if(red_y+counterPixel<Number(myCanvas.height)-31)//Number(document.getElementById('anim').style.height.slice(0,-2)))
+		if(red_y+counterPixel<Number(myCanvas.height)-31)
 		{
 			ctx.beginPath();
 			ctx.arc(red_x,red_y+counterPixel, 31, degToRad(0), degToRad(360), false);
@@ -330,12 +301,12 @@ let check2=false;
 let counterPixel2=1;
 function YellowToMove()
 {
-	let ctx = myCanvas.getContext('2d');
+	let ctx = document.getElementById('myCanvas').getContext('2d');
 	ctx.fillStyle = 'yellow';
 	if(k4==1 && check2==false)
 	{
 		check2=true;
-		if(yellow_x+counterPixel2<Number(myCanvas.width)-31)//Number(document.getElementById('anim').style.width.slice(0,-2)))
+		if(yellow_x+counterPixel2<Number(myCanvas.width)-31)
 		{
 			ctx.beginPath();
 			ctx.arc(yellow_x+counterPixel2,yellow_y, 31, degToRad(0), degToRad(360), false);
@@ -360,7 +331,7 @@ function YellowToMove()
 	if(k4==2 && check2==false)
 	{
 		check2=true;
-		if(yellow_y+counterPixel2<Number(myCanvas.height)-31)//Number(document.getElementById('anim').style.height.slice(0,-2)))
+		if(yellow_y+counterPixel2<Number(myCanvas.height)-31)
 		{
 			ctx.beginPath();
 			ctx.arc(yellow_x,yellow_y+counterPixel2, 31, degToRad(0), degToRad(360), false);
@@ -471,22 +442,18 @@ function YellowToMove()
 let first_click_close=false;
 function StartGame()
 {
+	let block= document.getElementById("pageB");		
+	sessionStorage.setItem('savedText',block.innerHTML);
 	localStorage.clear();
 	CreateButtonPlay();
 	playB.onclick = function(){
-		//localStorage.clear();
-		document.getElementById("playB").disabled = true; 
-		let block= document.getElementById("pageB");		
-		sessionStorage.setItem('savedText',block.innerHTML);			
-		block.innerHTML=null;
+		block.innerHTML=null;			
 		CreateButtonClose();
 		CreateButtonStart();
 		CreateDivMailBlock();
-		//alert(document.getElementById("pageB").innerHTML);
 		mailBlock.innerHTML="Click 'play' button!";
 		localStorage.setItem(new Date(),"Click 'play' button!");
 		CreateGameUsingCanvas();
-		DoubleToching();
 		startB.onclick=function(){
 			mailBlock.innerHTML="Click 'start' button!";
 			localStorage.setItem(new Date(),"Click 'start' button!");
@@ -494,11 +461,9 @@ function StartGame()
 			document.getElementById("startB").disabled = true; 
 		}
 		closeB.onclick=function(){
-			document.getElementById("playB").disabled = false; 
 			mailBlock.innerHTML="Click 'close' button!";
 			localStorage.setItem(new Date(),"Click 'close' button!");
 			document.getElementById('pageB').innerHTML=sessionStorage.getItem('savedText');
-			sessionStorage.removeItem('savedText');
 			clearInterval(timer);
 			pageHeader.font='font: 8pt/6pt'
 			if(!first_click_close){pageHeader.innerHTML+= "<br><textarea id='scrollBlock' overflow='auto'>"; first_click_close=true;}
